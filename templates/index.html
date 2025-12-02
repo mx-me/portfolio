@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maxime</title>
-    <meta name="description" content="Front end web dev" />
+    <meta name="description" content="full stack dev" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,11 +15,80 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="content">
-      <div>
-        <h1>Hi, I'm Maxime</h1>
-        <h2>I'm a front-end dev from France</h2>
-      </div>
+    <header>
+      <h1>Maxime</h1>
+      <h2>Full stack dev from France</h2>
+      <p>
+        let's get in touch!
+        <a href="https://www.linkedin.com/in/maxime-f-7a266b228/">linkedin</a>
+        <a href="mailto:mximef@proton.me">mximef@proton.me</a>
+        <br />
+        <a href="https://github.com/mx-me">github</a>
+        <a href="https://x.com/mximedev">x</a>
+      </p>
+    </header>
+    <main>
+      <section class="projects">
+        <h3>my projects</h3>
+        <article>
+          <h4>crypto art requests</h4>
+          <p>
+            WIP art commission platform facilitating payments using stable coins
+          </p>
+          <a href="https://github.com/mx-me/commissions">repo</a>
+        </article>
+        <article>
+          <h4>exploration</h4>
+          <p>WIP tiny web game made in rust using bevy</p>
+          <!-- <a href="">play it here!</a> -->
+        </article>
+        <article>
+          <h4>uchan</h4>
+          <p>
+            proof of concept federated typescript image board
+            <br />
+            backend written with deno, nextjs web client
+          </p>
+          <a href="https://github.com/mx-me/uchan">repo</a>
+        </article>
+        <article>
+          <h4>portfolio</h4>
+          <p>
+            this page! mostly static blog made using
+            <a href="https://www.getzola.org/">zola</a>
+          </p>
+          <a href="https://github.com/mx-me/portfolio">repo</a>
+        </article>
+      </section>
+      <section class="skills">
+        <h3>proficiencies</h3>
+        <article>
+          <h4>databases</h4>
+          <ul>
+            <li>sqlite</li>
+            <li>postgres</li>
+            <li>redis</li>
+          </ul>
+        </article>
+        <article>
+          <h4>languages</h4>
+          <ul>
+            <li>typescript</li>
+            <li>rust</li>
+          </ul>
+        </article>
+      </section>
+      {#
+      <section>
+        <h4>my blog</h4>
+        {% set section = get_section(path="_index.md") %} {% for post in
+        section.pages %}
+        <div>
+          <a href="{{ post.permalink }}">{{ post.title }}</a>
+        </div>
+        {% endfor %}
+      </section>
+      #}
     </main>
   </body>
 </html>
