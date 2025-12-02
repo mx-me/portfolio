@@ -1,15 +1,17 @@
 :root {
   --background: #fff;
   --text-color: #1e1e1e;
+  --accent: rgb(66, 227, 255);
+  --lighter-bg: #e7e6eb;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #1e1e1e;
     --text-color: #fff;
+    --lighter-bg: #302f34;
   }
 }
-
 
 body {
   font-family: "Darker Grotesque", sans-serif;
@@ -19,19 +21,81 @@ body {
   font-size: 1.2em;
   background-color: var(--background);
   color: var(--text-color);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 }
 
 h1,
-h2 {
-  margin: 0
+h2,
+h3,
+h4 {
+  margin: 0;
 }
 
 h1 {
-  font-size: 10em;
+  font-size: 4em;
+  line-height: 1.5ch;
 }
 
-.content {
+a {
+  color: var(--accent)
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+}
+
+header {
+  padding: 50px 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+header,
+main {
+  max-width: 650px;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding-bottom: 50px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 15px;
+}
+
+.skills h3 {
+  width: 100%;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.projects article {
+  background-color: var(--lighter-bg);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
