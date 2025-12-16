@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,7 @@
     <meta name="description" content="full stack dev" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
       <h1>
@@ -28,26 +29,39 @@
     <main>
       <section class="projects">
         <h3>projects</h3>
-        {# <article>
+
+        {% set section = get_section(path="projects/_index.md") %} {% for
+        project in section.pages %}
+        <li>
+          {{ project.title }}
+          <p>{{ project.content | safe }}</p>
+          {# {{project.repo}} {{project.demo}} #}
+
+          <time>{{ project.date | date(format="%Y-%m-%d") }}</time>
+        </li>
+        {% endfor %} {#
+        <article>
           <h4>quick comms</h4>
           <p>
-            art request platform for artists facilitating payments using stable coin aiming for frictionless commissions
+            art request platform for artists facilitating payments using stable
+            coin aiming for frictionless commissions
           </p>
           <a href="https://github.com/mx-me/commissions">repo</a>
-        </article> #}
+        </article>
+        #}
         <article>
           <h4>player</h4>
-          <p>
-            minimal react music player for showcasing musical projects
-          </p>
+          <p>minimal react music player for showcasing musical projects</p>
           <a href="https://github.com/mx-me/player">repo</a>
           <a href="https://player-457.pages.dev/">demo</a>
         </article>
-        {# <article>
+        {#
+        <article>
           <h4>exploration</h4>
           <p>walking simulator web game made in rust using bevy</p>
           <a href="">play it here!</a>
-        </article> #}
+        </article>
+        #}
         <article>
           <h4>µchan</h4>
           <p>
